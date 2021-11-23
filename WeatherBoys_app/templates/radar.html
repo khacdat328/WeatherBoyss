@@ -1,0 +1,17 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+    <div id="content">
+        <div class="search-container">
+            <form action="#" class="find-location">
+                <input type="text" placeholder="Find your location..." class="input-location">
+                <input type="submit" value="Find" class="find-button">
+            </form>
+        </div>
+        <div class="map-contain">
+            <iframe src="https://embed.windy.com/embed2.html?lat=20.509&lon=103.755&width=650&height=450&zoom=5&level=surface&overlay=temp&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0" class="map"></iframe>
+        </div>
+        <!-- <div id="windy"></div> -->
+    </div>
+    <script type="text/javascript" src="{% static 'radar.js' %}"></script>
+{% endblock %}
