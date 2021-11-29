@@ -7,10 +7,11 @@
     <title>Weather Boys</title>
     <link rel="icon" href="https://o.remove.bg/downloads/47dde753-4192-4115-9a21-50cf6a011294/image-removebg-preview.png" type="image/x-icon" />
     <link rel="stylesheet" href="./asset/themify-icon/themify-icons/themify-icons.css">
-    <!-- <link rel="stylesheet" href="/asset/css/style.css"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./asset/css/style.css">
     <link rel="stylesheet" href="./asset/weather-icons-master/css/weather-icons.min.css">
     <script src="https://kit.fontawesome.com/c678d77bec.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="main">
@@ -27,14 +28,18 @@
                 </a>
 
                 <div class="main-nav">
+                    <input type="checkbox" id="nav-check">
+                    <div class="nav-button">
+                        <label for="nav-check"><i class="ti-menu"></i></label>
+                    </div>
                     <!-- <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button> -->
-                    <ul class="nav">
+                    <ul class="nav nav-links">
                         <li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
-                        <li class="menu-item"><a href="#">News</a></li>
+                        <li class="menu-item"><a href="detail.html">More forecast</a></li>
                         <li class="menu-item"><a href="radar.html">Radar</a></li>
-                        <li class="menu-item"><a href="#">About</a></li>
-                        <!-- <li class="menu-item"><a href="#">Photos</a></li> -->
-                        <li class="menu-item"><a href="#">Contact</a></li>
+                        <li class="menu-item"><a href="about.html">About us</a></li>
+                        <!-- <li class="menu-item"><a href="#">Contact</a></li> -->
+                        <li class="menu-item"><a href="#">Login</a></li>
                     </ul> 
                 </div>
             </div>
@@ -48,7 +53,8 @@
                 <div class="search-content">
                     <form action="#" class="find-location">
                         <input type="text" placeholder="Find your location..." class="input-location">
-                        <input type="submit" value="Find" class="find-button">
+                        <input type="submit" value="&#xf689" class="find-button">
+                        <!-- <input type="submit" value="" class="find-button"> -->
                     </form>
                 </div>
             </div>
@@ -69,11 +75,11 @@
                         <div class="forecast-content">
                             <p class="location">-------</p>
                             <div class="degree">
-                                <div class="num">----<sup>0</sup>C</div>
+                                <div class="num">99<sup>0</sup>C</div>
                                 <div class="forecast-icon">
                                     <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="100">
                                 </div>	
-                                <div class="description">-----------------------</div>
+                                <div class="description">--------------------</div>
                             </div>
                             <!-- <span class="rain-ratio"><img src="./asset/img/images/icon-umberella.png" alt="">20%</span> -->
                             <span class="wind-speed"><img src="./asset/img/images/icon-wind.png" alt="">-- m/s</span>
@@ -86,85 +92,99 @@
                     <!-- END:TODAY -->
                     
                     <!-- BEGIN: NEXT 6 DAY -->
-                    <div class="forecast">
+                
+                    <div class="next6day forecast">
 				    	<div class="forecast-header">
 					    	<div class="day">Tuesday</div>
 					    </div> 
 
 					    <div class="forecast-content">
-					    	<div class="forecast-icon">
-							    <img src="./asset/img/images/icons/icon-3.svg" alt="" width=48>
-						    </div>
-						    <div class="degree">--<sup>o</sup>C</div>
-						    <small class="min">--<sup>o</sup></small>						
+                            <div class="forecast-icon">
+                                <img src="./asset/img/images/icons/icon-3.svg" alt="" width=48 class="forecast-icon-img">
+                            </div>
+                            <div>
+                                <div class="degree">--<sup>o</sup>C</div>
+                                <small class="min">--<sup>o</sup></small>						
+                            </div>
                     	</div>
 					</div>
 
-				    <div class="forecast">
+				    <div class="next6day forecast">
 						<div class="forecast-header">
 							<div class="day">Wednesday</div>
 						</div> 
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="./asset/img/images/icons/icon-5.svg" alt="" width=48>
+								<img src="./asset/img/images/icons/icon-5.svg" alt="" width=48 class="forecast-icon-img">
 							</div>
-							<div class="degree">--<sup>o</sup>C</div>
-							<small class="min">--<sup>o</sup></small>
+							<div>
+                                <div class="degree">--<sup>o</sup>C</div>
+                                <small class="min">--<sup>o</sup></small>						
+                            </div>
 						</div>
 					</div>
 
-					<div class="forecast">
+					<div class="next6day forecast">
 						<div class="forecast-header">
 							<div class="day">Thursday</div>
 						</div> 
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="./asset/img/images/icons/icon-7.svg" alt="" width=48>
+								<img src="./asset/img/images/icons/icon-7.svg" alt="" width=48 class="forecast-icon-img">
 							</div>
-							<div class="degree">--<sup>o</sup>C</div>
-							<small class="min">--<sup>o</sup></small>
+							<div>
+                                <div class="degree">--<sup>o</sup>C</div>
+                                <small class="min">--<sup>o</sup></small>						
+                            </div>
 						</div>
 					</div>
 
-					<div class="forecast">
+					<div class="next6day forecast">
 						<div class="forecast-header">
 							<div class="day">Friday</div>
 						</div> 
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="./asset/img/images/icons/icon-12.svg" alt="" width=48>
+								<img src="./asset/img/images/icons/icon-12.svg" alt="" width=48 class="forecast-icon-img">
 							</div>
-							<div class="degree">--<sup>o</sup>C</div>
-							<small class="min">--<sup>o</sup></small>
+							<div>
+                                <div class="degree">--<sup>o</sup>C</div>
+                                <small class="min">--<sup>o</sup></small>						
+                            </div>
 						</div>
 					</div>
 
-					<div class="forecast">
+					<div class="next6day forecast">
 						<div class="forecast-header">
 							<div class="day">Saturday</div>
 						</div> 
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="./asset/img/images/icons/icon-13.svg" alt="" width=48>
+								<img src="./asset/img/images/icons/icon-13.svg" alt="" width=48 class="forecast-icon-img">
 							</div>
-							<div class="degree">--<sup>o</sup>C</div>
-							<small class="min">--<sup>o</sup></small>
+							<div>
+                                <div class="degree">--<sup>o</sup>C</div>
+                                <small class="min">--<sup>o</sup></small>						
+                            </div>
 						</div>
                            
 					</div>
 
-					<div class="forecast">
+					<div class="next6day forecast">
 						<div class="forecast-header">
 							<div class="day">Sunday</div>
 						</div> 
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="./asset/img/images/icons/icon-14.svg" alt="" width=48>
+								<img src="./asset/img/images/icons/icon-14.svg" alt="" width=48 class="forecast-icon-img">
 							</div>
-							<div class="degree">--<sup>o</sup>C</div>
-							<small class="min">--<sup>o</sup></small>
+							<div>
+                                <div class="degree">--<sup>o</sup>C</div>
+                                <small class="min">--<sup>o</sup></small>						
+                            </div>
                         </div>
 					</div>
+          
                     <!-- END: NEXT 6 DAY -->
                 </div>
 
@@ -180,7 +200,7 @@
                             <div class="session-weather">
                                 <span class="session-temp">--<sup>o</sup>C</span>
                                 <div class="session-icon">
-                                    <i class="wi wi-day-cloudy "></i>
+                                    <img src="./asset/img/images/icons/icon-3.svg" alt="" class="s">
                                 </div>
                                 <p class="session-rain-ratio"> <i class="wi wi-raindrop"></i>--%</p>
                                 
@@ -192,7 +212,7 @@
                             <div class="session-weather">
                                 <span class="session-temp">--<sup>o</sup>C</span>
                                 <div class="session-icon">
-                                    <i class="wi wi-day-cloudy "></i>
+                                    <img src="./asset/img/images/icons/icon-3.svg" alt="" class="s">
                                 </div>
                                 <p class="session-rain-ratio"> <i class="wi wi-raindrop"></i>--%</p>
                                 
@@ -204,7 +224,7 @@
                             <div class="session-weather">
                                 <span class="session-temp">--<sup>o</sup>C</span>
                                 <div class="session-icon">
-                                    <i class="wi wi-day-cloudy "></i>
+                                    <img src="./asset/img/images/icons/icon-3.svg" alt="" class="s">
                                 </div>
                                 <p class="session-rain-ratio"> <i class="wi wi-raindrop"></i>--%</p>
                                
@@ -216,13 +236,13 @@
                             <div class="session-weather">
                                 <span class="session-temp">--<sup>o</sup>C</span>
                                 <div class="session-icon">
-                                    <i class="wi wi-day-cloudy "></i>
+                                    <img src="./asset/img/images/icons/icon-3.svg" alt="" class="s">
                                 </div>
                                 <p class="session-rain-ratio"> <i class="wi wi-raindrop"></i>--%</p>
                                
                             </div>
                         </div>
-
+                        <!-- <button class="detail-btn">Details <i class="ti-right-arrow"></i></button> -->
                         <button class="more-btn">More details</button>
                         <button class="more-btn">More details</button>
                         <button class="more-btn">More details</button>
@@ -253,6 +273,7 @@
                             <div class="weather-icon">
                                 <img src="./asset/img/images/icons/icon-3.svg" alt="" width="50" class="hourly-img">                             
                                 <span class="condition">-----------------------</span>
+
                             </div>
 
                             <span class="temp metric">
@@ -264,45 +285,58 @@
                                 <span class="raindrop">20%</span>
                             </div>
 
-                            
                             <input type="checkbox" id="open" class="show-nav" style="display:none">
                             <label for="open" class="label-open"><i class="ti-angle-up"></i></label> 
+                            
+                            
                             
                             <div class="hourly-nav">
                                 <div class="humidity nav-item">
                                     <i class="wi wi-humidity nav-icon"></i>
-                                    <span class="nav-detail">Humidity </span>
-                                    <span class="humid float-right">88%</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Humidity </span>
+                                        <span class="humid float-right">88%</span>
+                                    </div>
                                 </div>
 
                                 <div class="wind-speeds nav-item">
                                     <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="wind-speed nav-img">
-                                    <span class="nav-detail"> Wind speed</span>
-                                    <span class="ws float-right">10 mph</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Wind speed</span>
+                                        <span class="ws float-right">10 mph</span>
+                                    </div>        
                                 </div>
 
                                 <div class="wind-gust nav-item">
-                                    <i class="wi wi-strong-wind nav-icon"></i>
-                                    <span class="nav-detail">Wind gust</span>
-                                    <span class="wg float-right">13 Km/h </span>
+                                    <i class="wi wi-strong-wind nav-icon"></i>    
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind gust</span>
+                                        <span class="wg float-right">13 Km/h </span> 
+                                    </div>                       
                                 </div>
 
                                 <div class="wind-dir nav-item">
                                     <i class="wi wi-wind-direction nav-icon"></i>
-                                    <span class="nav-detail">Wind direction</span>
-                                    <span class="wd float-right">North East</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind direction</span>
+                                        <span class="wd float-right">North East</span>
+                                    </div>
                                 </div>
 
                                 <div class="pressure nav-item">
                                     <i class="wi wi-barometer nav-icon"></i>
-                                    <span class="nav-detail"> Pressure</span>
-                                    <span class="pr float-right">1010.3 mbar</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Pressure</span>
+                                        <span class="pr float-right">1010.3 mbar</span>
+                                    </div>                       
                                 </div>
 
                                 <div class="UV-index nav-item">
-                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">
-                                    <span class="nav-detail"> UV index</span>
-                                    <span class="uvi float-right">2 (High)</span>
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">                                 
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> UV index</span>
+                                        <span class="uvi float-right">2 (High)</span>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
@@ -332,38 +366,50 @@
                             <div class="hourly-nav">
                                 <div class="humidity nav-item">
                                     <i class="wi wi-humidity nav-icon"></i>
-                                    <span class="nav-detail">Humidity </span>
-                                    <span class="humid float-right">88%</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Humidity </span>
+                                        <span class="humid float-right">88%</span>
+                                    </div>
                                 </div>
 
                                 <div class="wind-speeds nav-item">
                                     <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="wind-speed nav-img">
-                                    <span class="nav-detail"> Wind speed</span>
-                                    <span class="ws float-right">10 mph</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Wind speed</span>
+                                        <span class="ws float-right">10 mph</span>
+                                    </div>        
                                 </div>
 
                                 <div class="wind-gust nav-item">
-                                    <i class="wi wi-strong-wind nav-icon"></i>
-                                    <span class="nav-detail">Wind gust</span>
-                                    <span class="wg float-right">13 Km/h </span>
+                                    <i class="wi wi-strong-wind nav-icon"></i>    
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind gust</span>
+                                        <span class="wg float-right">13 Km/h </span> 
+                                    </div>                       
                                 </div>
 
                                 <div class="wind-dir nav-item">
                                     <i class="wi wi-wind-direction nav-icon"></i>
-                                    <span class="nav-detail">Wind direction</span>
-                                    <span class="wd float-right">North East</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind direction</span>
+                                        <span class="wd float-right">North East</span>
+                                    </div>
                                 </div>
 
                                 <div class="pressure nav-item">
                                     <i class="wi wi-barometer nav-icon"></i>
-                                    <span class="nav-detail"> Pressure</span>
-                                    <span class="pr float-right">1010.3 mbar</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Pressure</span>
+                                        <span class="pr float-right">1010.3 mbar</span>
+                                    </div>                       
                                 </div>
 
                                 <div class="UV-index nav-item">
-                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">
-                                    <span class="nav-detail"> UV index</span>
-                                    <span class="uvi float-right">2 (High)</span>
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">                                 
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> UV index</span>
+                                        <span class="uvi float-right">2 (High)</span>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
@@ -393,38 +439,50 @@
                             <div class="hourly-nav">
                                 <div class="humidity nav-item">
                                     <i class="wi wi-humidity nav-icon"></i>
-                                    <span class="nav-detail">Humidity </span>
-                                    <span class="humid float-right">88%</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Humidity </span>
+                                        <span class="humid float-right">88%</span>
+                                    </div>
                                 </div>
 
                                 <div class="wind-speeds nav-item">
                                     <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="wind-speed nav-img">
-                                    <span class="nav-detail"> Wind speed</span>
-                                    <span class="ws float-right">10 mph</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Wind speed</span>
+                                        <span class="ws float-right">10 mph</span>
+                                    </div>        
                                 </div>
 
                                 <div class="wind-gust nav-item">
-                                    <i class="wi wi-strong-wind nav-icon"></i>
-                                    <span class="nav-detail">Wind gust</span>
-                                    <span class="wg float-right">13 Km/h </span>
+                                    <i class="wi wi-strong-wind nav-icon"></i>    
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind gust</span>
+                                        <span class="wg float-right">13 Km/h </span> 
+                                    </div>                       
                                 </div>
 
                                 <div class="wind-dir nav-item">
                                     <i class="wi wi-wind-direction nav-icon"></i>
-                                    <span class="nav-detail">Wind direction</span>
-                                    <span class="wd float-right">North East</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind direction</span>
+                                        <span class="wd float-right">North East</span>
+                                    </div>
                                 </div>
 
                                 <div class="pressure nav-item">
                                     <i class="wi wi-barometer nav-icon"></i>
-                                    <span class="nav-detail"> Pressure</span>
-                                    <span class="pr float-right">1010.3 mbar</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Pressure</span>
+                                        <span class="pr float-right">1010.3 mbar</span>
+                                    </div>                       
                                 </div>
 
                                 <div class="UV-index nav-item">
-                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">
-                                    <span class="nav-detail"> UV index</span>
-                                    <span class="uvi float-right">2 (High)</span>
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">                                 
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> UV index</span>
+                                        <span class="uvi float-right">2 (High)</span>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
@@ -454,38 +512,50 @@
                             <div class="hourly-nav">
                                 <div class="humidity nav-item">
                                     <i class="wi wi-humidity nav-icon"></i>
-                                    <span class="nav-detail">Humidity </span>
-                                    <span class="humid float-right">88%</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Humidity </span>
+                                        <span class="humid float-right">88%</span>
+                                    </div>
                                 </div>
 
                                 <div class="wind-speeds nav-item">
                                     <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="wind-speed nav-img">
-                                    <span class="nav-detail"> Wind speed</span>
-                                    <span class="ws float-right">10 mph</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Wind speed</span>
+                                        <span class="ws float-right">10 mph</span>
+                                    </div>        
                                 </div>
 
                                 <div class="wind-gust nav-item">
-                                    <i class="wi wi-strong-wind nav-icon"></i>
-                                    <span class="nav-detail">Wind gust</span>
-                                    <span class="wg float-right">13 Km/h </span>
+                                    <i class="wi wi-strong-wind nav-icon"></i>    
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind gust</span>
+                                        <span class="wg float-right">13 Km/h </span> 
+                                    </div>                       
                                 </div>
 
                                 <div class="wind-dir nav-item">
                                     <i class="wi wi-wind-direction nav-icon"></i>
-                                    <span class="nav-detail">Wind direction</span>
-                                    <span class="wd float-right">North East</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind direction</span>
+                                        <span class="wd float-right">North East</span>
+                                    </div>
                                 </div>
 
                                 <div class="pressure nav-item">
                                     <i class="wi wi-barometer nav-icon"></i>
-                                    <span class="nav-detail"> Pressure</span>
-                                    <span class="pr float-right">1010.3 mbar</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Pressure</span>
+                                        <span class="pr float-right">1010.3 mbar</span>
+                                    </div>                       
                                 </div>
 
                                 <div class="UV-index nav-item">
-                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">
-                                    <span class="nav-detail"> UV index</span>
-                                    <span class="uvi float-right">2 (High)</span>
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">                                 
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> UV index</span>
+                                        <span class="uvi float-right">2 (High)</span>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
@@ -515,38 +585,50 @@
                             <div class="hourly-nav">
                                 <div class="humidity nav-item">
                                     <i class="wi wi-humidity nav-icon"></i>
-                                    <span class="nav-detail">Humidity </span>
-                                    <span class="humid float-right">88%</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Humidity </span>
+                                        <span class="humid float-right">88%</span>
+                                    </div>
                                 </div>
 
                                 <div class="wind-speeds nav-item">
                                     <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="wind-speed nav-img">
-                                    <span class="nav-detail"> Wind speed</span>
-                                    <span class="ws float-right">10 mph</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Wind speed</span>
+                                        <span class="ws float-right">10 mph</span>
+                                    </div>        
                                 </div>
 
                                 <div class="wind-gust nav-item">
-                                    <i class="wi wi-strong-wind nav-icon"></i>
-                                    <span class="nav-detail">Wind gust</span>
-                                    <span class="wg float-right">13 Km/h </span>
+                                    <i class="wi wi-strong-wind nav-icon"></i>    
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind gust</span>
+                                        <span class="wg float-right">13 Km/h </span> 
+                                    </div>                       
                                 </div>
 
                                 <div class="wind-dir nav-item">
                                     <i class="wi wi-wind-direction nav-icon"></i>
-                                    <span class="nav-detail">Wind direction</span>
-                                    <span class="wd float-right">North East</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind direction</span>
+                                        <span class="wd float-right">North East</span>
+                                    </div>
                                 </div>
 
                                 <div class="pressure nav-item">
                                     <i class="wi wi-barometer nav-icon"></i>
-                                    <span class="nav-detail"> Pressure</span>
-                                    <span class="pr float-right">1010.3 mbar</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Pressure</span>
+                                        <span class="pr float-right">1010.3 mbar</span>
+                                    </div>                       
                                 </div>
 
                                 <div class="UV-index nav-item">
-                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">
-                                    <span class="nav-detail"> UV index</span>
-                                    <span class="uvi float-right">2 (High)</span>
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">                                 
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> UV index</span>
+                                        <span class="uvi float-right">2 (High)</span>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
@@ -557,7 +639,7 @@
                                 <span class="hourly-date">--/--</span>
                             </h4>
                             <div class="weather-icon">
-                                <img src="./asset/img/images/icons/New folder/13n.svg" alt="" width="50" class="hourly-img"> 
+                                <img src=" http://openweathermap.org/img/wn/01d@2x.png" alt="" width="50" class="hourly-img"> 
                                 <span class="condition">-----------------------</span>
                             </div>
 
@@ -576,38 +658,50 @@
                             <div class="hourly-nav">
                                 <div class="humidity nav-item">
                                     <i class="wi wi-humidity nav-icon"></i>
-                                    <span class="nav-detail">Humidity </span>
-                                    <span class="humid float-right">88%</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Humidity </span>
+                                        <span class="humid float-right">88%</span>
+                                    </div>
                                 </div>
 
                                 <div class="wind-speeds nav-item">
                                     <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="wind-speed nav-img">
-                                    <span class="nav-detail"> Wind speed</span>
-                                    <span class="ws float-right">10 mph</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Wind speed</span>
+                                        <span class="ws float-right">10 mph</span>
+                                    </div>        
                                 </div>
 
                                 <div class="wind-gust nav-item">
-                                    <i class="wi wi-strong-wind nav-icon"></i>
-                                    <span class="nav-detail">Wind gust</span>
-                                    <span class="wg float-right">13 Km/h </span>
+                                    <i class="wi wi-strong-wind nav-icon"></i>    
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind gust</span>
+                                        <span class="wg float-right">13 Km/h </span> 
+                                    </div>                       
                                 </div>
 
                                 <div class="wind-dir nav-item">
                                     <i class="wi wi-wind-direction nav-icon"></i>
-                                    <span class="nav-detail">Wind direction</span>
-                                    <span class="wd float-right">North East</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail">Wind direction</span>
+                                        <span class="wd float-right">North East</span>
+                                    </div>
                                 </div>
 
                                 <div class="pressure nav-item">
                                     <i class="wi wi-barometer nav-icon"></i>
-                                    <span class="nav-detail"> Pressure</span>
-                                    <span class="pr float-right">1010.3 mbar</span>
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> Pressure</span>
+                                        <span class="pr float-right">1010.3 mbar</span>
+                                    </div>                       
                                 </div>
 
                                 <div class="UV-index nav-item">
-                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">
-                                    <span class="nav-detail"> UV index</span>
-                                    <span class="uvi float-right">2 (High)</span>
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="nav-img">                                 
+                                    <div class="make-flex">
+                                        <span class="nav-detail"> UV index</span>
+                                        <span class="uvi float-right">2 (High)</span>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
@@ -616,10 +710,13 @@
             
             </div>
             <div class="map-contain">
-                <iframe src="https://embed.windy.com/embed2.html?lat=20.509&lon=103.755&width=650&height=450&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" 
+                <iframe src="https://embed.windy.com/embed2.html?lat=20.509&lon=103.755&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=m/s&metricTemp=default&radarRange=-1" 
                 frameborder="0" class="map"></iframe>
             </div>
         </div>
+
+
+
         <div id="footer">
             <div class="footer-company">
                 <span class="company-icon"><i class="fab fa-old-republic"></i></span>
@@ -645,6 +742,8 @@
             </p>
         </div>
     </div>
-    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <!-- <script type="text/javascript" src="radar.js"></script> -->
+
 </body>
 </html>

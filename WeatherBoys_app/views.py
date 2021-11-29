@@ -6,12 +6,6 @@ from django.contrib.auth import login, authenticate
 from WeatherBoys_app.forms import SignUpForm
 from django.urls import reverse
 
-def home_view(request):
-    return render(
-        request,
-        'index2.html',
-    )
-
 def signup_view(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -47,18 +41,54 @@ def login_view(request):
         {'login_form':form},
     )
 
+def logout(request):
+    success_url = reverse('login')
+    return redirect(success_url)
+
+def home_view(request):
+    return render(
+        request,
+        'index2.html',
+    )
+
 def home_view_log(request):
     return render(
         request,
         'index2-log.html',
     )
-
-def logout(request):
-    success_url = reverse('login')
-    return redirect(success_url)
-
+    
 def radar(request):
     return render(
         request,
         'radar.html',
+    )
+
+def radar_log(request):
+    return render(
+        request,
+        'radar-log.html',
+    )
+
+def about(request):
+    return render(
+        request,
+        'about.html',
+    )
+
+def about_log(request):
+    return render(
+        request,
+        'about-log.html',
+    )
+
+def detail(request):
+    return render(
+        request,
+        'detail.html',
+    )
+
+def detail_log(request):
+    return render(
+        request,
+        'detail-log.html',
     )

@@ -719,7 +719,9 @@ html{
     border: 1px solid black;
     border-radius: 0;
 }
+/* END: FOOTER */
 
+/* BEGIN: LOGIN */
 .login{
     display: flex;
     justify-content: center;
@@ -727,3 +729,32 @@ html{
 }
 /* END: FOOTER */
 
+/* BEGIN: SIGN UP */
+.sign-up{
+    display: block;
+    margin: auto;
+}
+
+.container-sign-up{
+    width: 100vw;
+    display: flex;
+}
+
+.submit-contain{
+    padding-left: 64px;
+}
+/* END: SIGN UP */
+
+/* BEGIN: HIDE HELPTEXT */
+.alert-error{
+    display: none;
+}
+
+.help-block{
+    display: none;
+}
+
+.controls>ul>li{
+    display: none;
+}
+/* END: HIDE HELPTEXT */
