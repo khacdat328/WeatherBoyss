@@ -1,6 +1,7 @@
 <!-- THIS IS THE SIGN UP SUCCESS PAGE -->
 {% extends 'base.html' %}
 {% block content %}
+  {% csrf_token %}
   <style>
     h1 {text-align: center;}
     p {text-align: center;}
@@ -9,4 +10,7 @@
   <p class='text-success'>
     Thanks for the sign up
   </p>
+  <h4>
+    <p class="text-center">If you already have an account, <a href="{% url 'login' %}">Login</a> instead.</p>
+  </h4>
 {% endblock %}
