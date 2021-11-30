@@ -1,17 +1,62 @@
-{% extends 'base1.html' %}
 {% load static %}
-{% block content %}
-    <div id="content">
-        <div class="search-container">
-            <form action="#" class="find-location">
-                <input type="text" placeholder="Find your location..." class="input-location">
-                <input type="submit" value="Find" class="find-button">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Boys</title>
+    <link rel="icon" href="https://o.remove.bg/downloads/47dde753-4192-4115-9a21-50cf6a011294/image-removebg-preview.png" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'asset/themify-icon/themify-icons/themify-icons.css' %}">
+    <!-- <link rel="stylesheet" href="/asset/css/style.css"> -->
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/weather-icons-master/css/weather-icons.min.css' %}">
+    <script src="https://kit.fontawesome.com/c678d77bec.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="header-content">
+            <a href="{% url 'home_log' %}" class="branding">
+                <i class="fab fa-empire"></i>
+                <!-- <img src="" alt="" class="logo"> -->
+                <div class="logo-type">
+                    <h1 class="site-title">Weather </h1>
+                    <p class="site-description">Boys</p>
+                </div>
+            </a>
+
+            <div class="main-nav">
+                <input type="checkbox" id="nav-check">
+                <div class="nav-button">
+                    <label for="nav-check"><i class="ti-menu"></i></label>
+                </div>
+                <!-- <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button> -->
+                <ul class="nav nav-links">
+                    <li class="menu-item current-menu-item"><a href="{% url 'home_log' %}">Home</a></li>
+                    <li class="menu-item"><a href="{% url 'detail_log' %}">More forecast</a></li>
+                    <li class="menu-item"><a href="{% url 'radar_log' %}">Radar</a></li>
+                    <li class="menu-item"><a href="{% url 'about_log' %}">About us</a></li>
+                    <!-- <li class="menu-item"><a href="#">Contact</a></li> -->
+                    <li class="menu-item"><a href="{% url 'logout' %}">Log out</a></li>
+                </ul> 
+            </div>
+        </div>
+
+    </div>
+    
+    <div id="map-content">
+        <div class="search">
+            <form action="#" class="search-radar find-location">
+                <input type="text" placeholder="..." class="input-location2">
+                <input type="submit" value="&#xf689" class="find-button2">
             </form>
         </div>
-        <div class="map-contain">
-            <iframe src="https://embed.windy.com/embed2.html?lat=20.509&lon=103.755&width=650&height=450&zoom=5&level=surface&overlay=temp&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0" class="map"></iframe>
+        <div class="map-contain2">
+            <iframe src="https://embed.windy.com/embed2.html?lat=20.509&lon=103.755&width=650&height=450&zoom=5&level=surface&overlay=temp&product=ecmwf&menu=&message=&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0" class="radar"></iframe>
         </div>
         <!-- <div id="windy"></div> -->
     </div>
+    <!-- <script type="text/javascript" src="main.js"></script> -->
     <script type="text/javascript" src="{% static 'radar.js' %}"></script>
-{% endblock %}
+</body>
+</html>

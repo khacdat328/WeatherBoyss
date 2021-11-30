@@ -23,6 +23,13 @@ html {
 #header{
     height: 80px;
     background-color: #1e202b;
+    /* width: 100%; */
+    /* overflow:scroll; */
+    /* position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1; */
 } 
 
 .header-content{
@@ -141,6 +148,7 @@ html {
     color: black;
 }
 .search-radar.find-location input[type="text"] {
+
     width: 100%;
     padding: 15px 50px 15px 20px;
     background: #7a7c8b;
@@ -164,7 +172,6 @@ html {
     border-radius: 40px;
     background: #029dd9;
     transition: all 700ms;
-
 }
 
 .search-radar.find-location input:hover[type="submit"]{

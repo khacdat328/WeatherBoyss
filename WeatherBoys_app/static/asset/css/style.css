@@ -21,7 +21,7 @@ html{
 body{
     height: 100%;
 }
-.mt-8px {
+/* .mt-8px {
     margin-top: 8px !important;
 }
 
@@ -59,7 +59,7 @@ body{
 }
 .text-white {
     color: #fff !important;
-}
+} */
 .clear {
     clear: both;
 }
@@ -116,7 +116,7 @@ body{
 .main-nav{
     display: flex;
     flex: 1;
-    justify-content: flex-end;
+    justify-content:flex-end;
     align-items: center;
 }
 
@@ -136,10 +136,6 @@ body{
     padding: 4px 15px;
     border: 2px solid #1e202b;
     border-radius: 20px;
-    -webkit-transition: all 700ms;
-    -moz-transition: all 700ms;
-    -ms-transition: all 700ms;
-    -o-transition: all 700ms;
     transition: all 700ms;
 }
 
@@ -148,10 +144,6 @@ body{
    color: #029dd0;
    border-radius: 20px;
    outline: none;
-   -webkit-transition: all 700ms;
-    -moz-transition: all 700ms;
-    -ms-transition: all 700ms;
-    -o-transition: all 700ms;
     transition: all 700ms;
 }
 
@@ -411,15 +403,7 @@ body{
     color: white;
 }
 
-@-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff
-    }
-    
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #029dd9, 0 0 40px #029dd9, 0 0 50px #029dd9, 0 0 60px #029dd9, 0 0 70px #029dd9, 0 0 80px #029dd9;
-    }
-}
+
 .session-forecast{
     box-shadow: -7px -6px 20px 2px rgb(0 0 0 / 30%)
 }
@@ -639,9 +623,7 @@ body{
     align-content: center;
 } */
 
-.show-nav ~ .label-open{
-    /* transition: all ease-in-out .s; */
-}
+
 
 .label-open:hover .ti-angle-up{
     text-shadow: 0px 0px 10px #029dd0;
@@ -759,14 +741,14 @@ body{
 
 /* RADAR.HTML */
 
-#radar-body{
+/* #radar-body{
     height: 100%;
     display: flex;
     flex-flow: column;
-}
+} */
 
 #map-content{
-    height: 100%;
+    height: 88.5%;
     display: flex;   
     /* justify-content: center; */
     /* flex-flow: row; */
@@ -802,7 +784,31 @@ body{
 
 /*---------------------------------------------*/
 /* DETAIL.HTML */
+#goTop{
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    height: 70px;
+    width: 70px;
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: 0.5px solid  black; /* Remove borders */
+    outline: none; /* Remove outline */
+    border-radius: 50%;
+    background-color: black; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    /* border-radius: 10px; Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
 
+#goTop:hover {
+    background-color: black; /* Add a dark-grey background on hover */
+    border: 0.5px solid  #029dd9;
+    color: #0086bb;
+    
+  }
 #detail-header{
     height: 80px;
 }
@@ -861,19 +867,30 @@ body{
     border: 2px solid white;
     transition: all 700ms;
 }
-
+#main-detail .blank{
+    height: 100px;
+}
+#detail-content{
+    background-image: url(https://media.istockphoto.com/photos/rainy-day-apartments-picture-id114313632?b=1&k=20&m=114313632&s=170667a&w=0&h=OwxuloSN4Ye3EhwCmDsAJVzYNRIwn5c_a5FAWi-FpgA=);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color:  #1e202b;
+}
 .detail-container{
-    height: fit-content;
-    padding: 0 0 120px 0;
-    width: 80%;
-    margin: auto;
-    background-color: #1e202b;
+   /* margin-top: ; */
+   border: 0.5px solid #a0b5c3;
+   height: fit-content;
+   padding: 0 0 100px 0;
+   width: 80%;
+   margin: auto;
+   background-color: #2a2d3a   ;
 }
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+     /* border: 1px solid #ccc; */
+     background-color: #2b2d35;
+     border-bottom: 00.5px solid #ccc;
     display: flex;
     justify-content: center;
   }
@@ -881,23 +898,37 @@ body{
  /* Style the buttons that are used to open the tab content */
  .tab button {
     background-color: inherit;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: whitesmoke;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
+    transition: 0.2s;
+    border-right: 0.3px solid #2b2d35; 
+    border-left: 0.3px solid #2b2d35;
+    /* margin: 0 2px; */
     /* margin: auto; */
   }
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #ddd;
+    background-color: rgb(78, 78, 78);
+    border-right: 0.3px solid #029dd0;
+    border-left: 0.3px solid #029dd0;
+   
+    color: black;
   }
   
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: #ccc;
+    background-color: rgb(36, 35, 35);
+    font-weight: 500;
+    color: white;
+    border-right: 0.3px solid #029dd0;
+    border-left: 0.3px solid #029dd0;
   }
   
   .detail-location{
@@ -914,9 +945,18 @@ body{
     padding: 6px 8px;
     border: 1px solid #ccc;
     /* border-top: none; */
+    background-color:  #282b35;
     animation: fadeEffect 1s;
+    box-shadow: 5px 5px black;
 }
 
+#PastForecast,
+#Hourly{
+    display: none;
+}
+#Next7days.tabcontent{
+    display: block;
+}
 
 #Hourly{
     display: block;
@@ -942,15 +982,17 @@ body{
 .short-forecast .weather-information{
     flex: 1;
     display: grid;
+    /* height: auto; */
     grid-template-rows: 50% 50%;
     justify-items: start;
-    align-items: center;
+    align-items: flex-start;
 }
 .short-forecast .weather-information .time{
     font-size: 40px;
 }
 .short-forecast .weather-information .detail.description{
-    font-size: 21px;
+    font-size: 23px;
+    text-transform: capitalize;
 }
 .detail.real-feel,
 .detail.rain-volumn,
@@ -1029,28 +1071,65 @@ body{
 }
 
 /* ID:NEXT7DAYS */
-#PastForecast,
-#Hourly{
-    display: none;
-}
-#Next7days.tabcontent{
-    display: block;
-}
+
 #Next7days .weather-content .detail.session-content{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    width: 80%;
+    width: 94%;
+    background-color: #323544;
 }
- .detail.session-weather .detail.session-icon s{
-    width: 60px;
+.detail.inday-forecast .detail.session-header {
+    font-size: 24px;
+    text-transform: capitalize;
+    margin: auto;
+    text-align: center;
 }
 .detail.inday-forecast{
+    margin-top: 0;
     text-align: center;
     height: fit-content;
+    padding: 0;
 }
+#Next7days .detail.session-weather .max-temp,
+#Next7days .detail.session-weather .feel-like{
+    font-size: 24px;
+    /* flex: 1; */
+}
+
+#Next7days .detail.session-weather .session-temp,
+#Next7days .detail.session-weather .session-rain-ratio
+{
+    font-size: 22px;
+}
+.detail.inday-forecast:nth-child(2n) .session-header,
+.detail.inday-forecast:nth-child(2n+1)
+{
+    background-color:#414655;
+}
+.detail.inday-forecast:nth-child(2n),
+.detail.inday-forecast:nth-child(2n+1) .session-header
+{
+    background-color:#2c2f41;
+}
+#Next7days .detail.session-weather{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 148px;  
+    padding: 10px;
+}
+
 
 /* DETAIL.HTML */
 /*---------------------------------------------*/
+
+/* ------------------------------------------- */
+/* ABOUT US */
+
+/* ABOUT US */
+/* ------------------------------------------- */
+
+
 
 
 /* -----------------------------------------------*/
@@ -1372,8 +1451,119 @@ body{
     }
     /*-----------------RADAR.HTML----------------- */
     /*---------------------------------------------*/
-}
+
+    /* ------------------------------------------- */
+    /* MORE FORECAST */
+
+    /* ------------------------------------------- */
+    /* hourly */
+    .tab button{
+        font-size: 3vw;
+    }
+    .detail-location{
+        font-size: 3vw;
+    }
+    .detail-container{
+        width: 90%;
+    }
+    .weather-information{
+        height: 100px;
+        grid-template-rows: 30% 70%;
+
+    }
+    .short-forecast .weather-information .detail.description{
+        font-size: 20px;
+        text-align: center;
+    }
+    .weather-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .weather-content{
+        height: fit-content;
+        padding: 10px 0;
+    }
+    .short-forecast{
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    .detail.real-feel, .detail.rain-volumn, .detail.temp{
+        border-left: none;
+        grid-template-columns: 15% 85%;
+        margin-top: 4px;
+    }
+    .weather-header .short-forecast img{
+        width: 56px;
+        vertical-align: bottom;
+        /* height: 50px; */  
+    }
+    .weather-header .detail .wi.header-icon{
+        font-size: 36px;
+    }
+    .short-forecast .weather-information{
+        justify-items: center;
+        align-items: center;
+    }
+    .short-forecast .weather-information .time{
+        font-size: 7vw;
+    }
+    .fully-information{
+        border-top: 1px solid wheat;
+    }
+    .fully-information .weather-container{
+        grid-template-columns: 50% 50%;
+    }
+    .fully-information .weather-container .detail-icon{
+        font-size: 4vw;
+        
+    }
+    .fully-information .weather-container .weather.detail-item{
+        column-gap: 4px;
+        padding: 0;
+        grid-template-columns: 13% auto;
+    }
     
+    .fully-information .weather-container .kindof-index,
+    .fully-information .weather-container .weather-index{
+        font-size: 4.6vw;
+    }
+    .weather-container .weather.UVindex .weather-index{
+        font-size: 3.6vw;
+    }
+    .weather.detail-item .detail-img{
+        width: 4vw;
+    }
+    #Next7days .weather-content .detail.session-content{
+        grid-template-columns: 50% 50%;
+    }
+    .inday-forecast:nth-child(1), 
+    .inday-forecast:nth-child(2), 
+    .inday-forecast:nth-child(3){
+        border: none;
+    }
+    .detail.inday-forecast .detail.session-header{
+        font-size: 16px;
+    }
+    #Next7days .detail.session-weather{
+        padding: 10px 4px;
+    }
+    #Next7days .detail.session-weather .max-temp,
+    #Next7days .detail.session-weather .feel-like{
+        font-size: 3.5vw;
+    }
+    #Next7days .detail.session-weather .session-temp, 
+    #Next7days .detail.session-weather .session-rain-ratio{
+        font-size: 20px;
+    }
+
+    /* hourly */
+    /* ------------------------------------------- */
+
+}
+
 
 
 /* TABLET: WIDTH: 740px <= x < 1024px */ 
@@ -1509,6 +1699,68 @@ body{
     }
     /*-----------------RADAR.HTML------------------*/
     /*---------------------------------------------*/
+
+    /* ------------------------------------------- */
+    /* MORE FORECAST */
+
+    /* ------------------------------------------- */
+    /* hourly */
+    #detail-container{
+        width: 80%;
+    }
+    .weather-header{
+        grid-template-columns: 38% 31% 31%;
+    }
+    .weather-content .short-forecast img{
+     width: 65px;
+     height: 65px;
+    }  
+    .short-forecast{
+        height: fit-content;
+    }
+    .short-forecast .weather-information{
+        flex: 1;
+    }
+    .weather-content .short-forecast .time{
+        font-size: 20px
+    } 
+    .weather-content .short-forecast .detail.description{
+        font-size: 14px;
+    }
+    .weather-header .wi.header-icon{
+        font-size: 36px;
+    }
+    .detail.make-grid h3,
+    .detail.make-grid h6{
+        font-size: 14px;
+    }
+    .weather.detail-item .detail-icon{
+        font-size: 24px;
+    }
+    .fully-information .weather-container .weather.detail-item{
+        column-gap: 6px;
+    }
+    .weather-container .weather.detail-item .weather.make-grid{
+        font-size: 15px;
+    }
+    #Next7days .weather-content .detail.session-content{
+        padding-top: 10px;
+    }
+    .detail.inday-forecast .detail.session-header{
+        font-size: 20px;
+        padding: 3px 0;
+    }
+    #Next7days .detail.session-weather{
+        padding: 4px;
+    }
+    #Next7days .detail.session-weather .max-temp{
+        font-size: 18px;
+    }
+     #Next7days .detail.session-weather .feel-like{
+         font-size: 20px;
+     }
+    /* hourly */
+    /* ------------------------------------------- */
 }   
 /* -----------------------------------------------*/
 /*------------------ RESPONSIVE ------------------*/
@@ -1520,7 +1772,7 @@ body{
     justify-content: center;
     margin: 80px 0;
 }
-/* END: FOOTER */
+/* END: LOGIN */
 
 /* BEGIN: SIGN UP */
 .sign-up{
