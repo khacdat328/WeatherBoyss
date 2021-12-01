@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Boys</title>
+    <link rel="icon" href="https://o.remove.bg/downloads/47dde753-4192-4115-9a21-50cf6a011294/image-removebg-preview.png" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'asset/themify-icon/themify-icons/themify-icons.css' %}">
+    <!-- <link rel="stylesheet" href="/asset/css/style.css"> -->
+    <link rel="stylesheet" href="{% static 'asset/weather-icons-master/css/weather-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}">
+    
+    <script src="https://kit.fontawesome.com/c678d77bec.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main">
+        
+        <div id="header">
+            <div class="header-content">
+                <a href="{% url 'home_log' %}" class="branding">
+                    <i class="fab fa-empire"></i>
+                    <!-- <img src="" alt="" class="logo"> -->
+                    <div class="logo-type">
+                        <h1 class="site-title">Weather </h1>
+                        <p class="site-description">Boys</p>
+                    </div>
+                </a>
+
+                <div class="main-nav">
+                    <input type="checkbox" id="nav-check">
+                    <div class="nav-button">
+                        <label for="nav-check"><i class="ti-menu"></i></label>
+                    </div>
+                    <!-- <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button> -->
+                    <ul class="nav nav-links">
+                        <li class="menu-item current-menu-item"><a href="{% url 'home_log' %}">Home</a></li>
+                        <li class="menu-item"><a href="{% url 'detail_log' %}">More forecast</a></li>
+                        <li class="menu-item"><a href="{% url 'radar_log' %}">Radar</a></li>
+                        <li class="menu-item"><a href="#">About us</a></li>
+                        <!-- <li class="menu-item"><a href="#">Contact</a></li> -->
+                        <li class="menu-item"><a href="{% url 'logout' %}">Log out</a></li>
+                    </ul> 
+                </div>
+            </div>
+
+        </div>
+
+        {% block content %}{% endblock %}
+
+        <div id="footer">
+            <div class="footer-company">
+                <span class="company-icon"><i class="fab fa-old-republic"></i></span>
+                <div class="company-name">
+                    <h2>Weather</h2>
+                    <p>Boys</p>
+                </div>
+            </div>
+            <div class="footer-icon">
+                <p>CONTACT US</p>
+                <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-instagram"></i></a>
+                <a href="#"><i class="ti-goole"></i></a>
+                <a href="#"><i class="ti-pinterest"></i></a>
+                <a href="#"><i class="ti-twitter"></i></a>
+                <a href="#"><i class="ti-themify-favicon"></i></a>
+            </div>
+            <p class="copy-right">
+                Copy right <span>&copy;</span> 2021 by NT208.M11.1952xxxx
+            </p>
+            <p class="footer-infor">
+                Powered by <a href="#" class="footer-powered">NT208.M11.ATTT</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
