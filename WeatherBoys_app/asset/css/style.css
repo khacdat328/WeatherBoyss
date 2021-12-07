@@ -56,7 +56,7 @@ body{
 
 .header-content a{
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
 }
 
 .header-content .branding {
@@ -112,6 +112,7 @@ body{
     border: 2px solid #029dd0;
 }
 #content {
+    height: 70%;
     width: 100%;
     background-image: url(https://media.istockphoto.com/photos/rainy-day-apartments-picture-id114313632?b=1&k=20&m=114313632&s=170667a&w=0&h=OwxuloSN4Ye3EhwCmDsAJVzYNRIwn5c_a5FAWi-FpgA=);
     background-repeat: no-repeat;
@@ -143,7 +144,7 @@ body{
     width: 100%;
     padding: 20px 50px 20px 20px;
     background: #1e202b;
-    color: white;
+    color: whitesmoke;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -171,7 +172,7 @@ body{
 
 .find-location input:hover[type="submit"]{
     cursor: pointer;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     transition: all 700ms;
 }
 
@@ -361,7 +362,7 @@ body{
     transition: all 0.1s ease-in-out;
     background-color: #029dd9;
     border: 2px solid rgb(144, 151, 41); 
-    color: white;
+    color: whitesmoke;
 }
 
 
@@ -454,7 +455,7 @@ body{
     align-items: center;
     justify-content: space-between;
     border-radius: 8px;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     flex-wrap: wrap;
 }
 
@@ -569,7 +570,7 @@ body{
 .hourly-forecast .open-nav{
     background: none;
     border: none;
-    color: white;
+    color: whitesmoke;
 }
 
 .label-open .ti-angle-up::after {
@@ -631,7 +632,7 @@ body{
 #footer {
     text-align: center;
     padding:8px;
-    color: white;
+    color: whitesmoke;
     background-color:#323544 ;
 }
 
@@ -662,7 +663,7 @@ body{
 }
 .footer-icon a {
     font-size: 20px;
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
     padding: 8px 0;
 }
@@ -684,7 +685,7 @@ body{
 }
 
 .footer-powered {
-    color:  white;
+    color:  whitesmoke;
 }
 
 .copy-right{
@@ -759,7 +760,7 @@ body{
     outline: none; /* Remove outline */
     border-radius: 50%;
     background-color: black; /* Set a background color */
-    color: white; /* Text color */
+    color: whitesmoke; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
     /* border-radius: 10px; Rounded corners */
@@ -799,7 +800,7 @@ body{
     width: 100%;
     padding: 20px 50px 20px 20px;
     background: #1e202b;
-    color: white;
+    color: whitesmoke;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -827,7 +828,7 @@ body{
 
 .detail.find-location input:hover[type="submit"]{
     cursor: pointer;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     transition: all 700ms;
 }
 #main-detail .blank{
@@ -889,7 +890,7 @@ body{
 .tab button.active {
     background-color: rgb(36, 35, 35);
     font-weight: 500;
-    color: white;
+    color: whitesmoke;
     border-right: 0.3px solid #029dd0;
     border-left: 0.3px solid #029dd0;
 }
@@ -898,7 +899,7 @@ body{
     margin: auto;
     padding: 20px;
     width: fit-content;
-    color: white;
+    color: whitesmoke;
 }
   /* Style the tab content */
 .tabcontent {
@@ -932,7 +933,7 @@ body{
 .weather-content{
     flex: 1;
     padding: 30px 0;
-    border-top: 1px solid white;
+    border-top: 1px solid whitesmoke;
 }
 .weather-header{
     display: grid;
@@ -1134,7 +1135,7 @@ body{
     .main-nav > .nav-button > label {
         display: inline-block;
         font-size: 30px;
-        color: white;
+        color: whitesmoke;
         margin-right: 8px;
         height: 30px;
         padding: 0;
@@ -1178,7 +1179,7 @@ body{
         padding: 0 5px;
     }
     .main-nav .nav-links a{
-        border: 2px solid white;
+        border: 2px solid whitesmoke;
         text-align: center;
         display: block;
         width: 100%;
@@ -1728,3 +1729,114 @@ body{
 /* -----------------------------------------------*/
 /*------------------ RESPONSIVE ------------------*/
 /* -----------------------------------------------*/
+
+/* BEGIN: LOGIN */
+main{
+    height: fit-content;
+}
+#login-content{
+    height: 60%;
+    width: 100%;
+    background-image: url(https://media.istockphoto.com/photos/rainy-day-apartments-picture-id114313632?b=1&k=20&m=114313632&s=170667a&w=0&h=OwxuloSN4Ye3EhwCmDsAJVzYNRIwn5c_a5FAWi-FpgA=);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #262936;
+}
+.login-container{
+    height: 100%;
+    padding: 62px 0;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto ; */
+    /* background-color: #24293e; */
+    /* padding: 10px; */
+    /* flex: 1; */
+}
+
+.login form{
+    background-color: #24293e;
+    padding: 20px 50px;
+    color: wheat;
+    height: fit-content;
+}
+.login form #div_id_username{
+    margin-bottom: 10px;
+}
+.login form .textinput{
+    padding: 5px;
+    
+}
+.login .text-center{
+    font-size: 14px;
+    text-align: end;
+    padding: 4px 0;
+}
+.login .text-center a{
+    color: rgb(223, 186, 186);
+}
+/* END: LOGIN */
+
+/* BEGIN: SIGN UP */
+.sign-up{
+    display: block;
+    margin: auto;
+}
+
+.sign-up form .control-group {
+    /*  */
+    padding: 5px;
+}
+.sign-up form .control-group label{
+    /* padding-bottom: 4px; */
+}
+.sign-up form .control-group input{
+    padding: 2px 10px;
+}
+.sign-up form{
+    /* width: 40vw; */
+    text-align: center;
+    background-color: #24293e;
+    padding: 5px 10px;
+    color: whitesmoke;
+}
+.sign-up form .text-center{
+    font-size: 12px;
+}
+.sign-up form .text-center a{
+    color: #029dd0;
+}
+.container-sign-up{
+    padding: 10px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-contain{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.submit-contain input{
+    padding: 2px 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+/* END: SIGN UP */
+
+/* BEGIN: HIDE HELPTEXT */
+.alert-error{
+    display: none;
+}
+
+.help-block{
+    display: none;
+}
+
+.controls>ul>li{
+    display: none;
+}
+/* END: HIDE HELPTEXT */
