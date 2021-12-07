@@ -1,0 +1,22 @@
+<!-- THIS IS THE LOGIN PAGE -->
+{% extends 'base.html' %}
+{% block content %}
+<div id="login-content">
+  {% load crispy_forms_tags %}
+  <div class="login-container">
+    <div class="login">
+      <form method="post" action=".">
+        {% csrf_token %}
+        <p>
+          {{ login_form|crispy }}
+        </p>
+        <div class="submit-contain">
+          <input type="submit" value="Login" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+        <p class="text-center">Don't have an account? <br><a href="{% url 'sign_up' %}">Sign up</a> now.</p>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

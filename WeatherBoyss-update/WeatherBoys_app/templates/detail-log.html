@@ -1,0 +1,476 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Boys</title>
+    <link rel="icon" href="https://o.remove.bg/downloads/47dde753-4192-4115-9a21-50cf6a011294/image-removebg-preview.png" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'asset/themify-icon/themify-icons/themify-icons.css' %}">
+    <!-- <link rel="stylesheet" href="/asset/css/style.css"> -->
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/weather-icons-master/css/weather-icons.min.css' %}">
+    <script src="https://kit.fontawesome.com/c678d77bec.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main-detail">
+        <div id="header">
+            <div class="detail header-content">
+                <a href="{% url 'home_log' %}" class="branding">
+                    <i class="fab fa-empire"></i>
+                    <!-- <img src="" alt="" class="logo"> -->
+                    <div class="logo-type">
+                        <h1 class="site-title">Weather </h1>
+                        <p class="site-description">Boys</p>
+                    </div>
+                </a>
+
+                <div class="main-nav">
+                    <input type="checkbox" id="nav-check">
+                    <div class="nav-button">
+                        <label for="nav-check"><i class="ti-menu"></i></label>
+                    </div>
+                    <!-- <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button> -->
+                    <ul class="nav nav-links">
+                        <li class="menu-item current-menu-item"><a href="{% url 'home_log' %}">Home</a></li>
+                        <li class="menu-item"><a href="{% url 'detail_log' %}">More forecast</a></li>
+                        <li class="menu-item"><a href="{% url 'radar_log' %}">Radar</a></li>
+                        <li class="menu-item"><a href="{% url 'about_log' %}">About us</a></li>
+                        <!-- <li class="menu-item"><a href="#">Contact</a></li> -->
+                        <li class="menu-item"><a href="{% url 'logout' %}">Log out</a></li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+
+        <div id="detail-content">
+                <button onclick="topFunction()" id="goTop" title="Go to top"><i class="ti-arrow-up"></i></button>
+                <div class="blank"></div>
+                <div class="detail-container">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event,'PastForecast')">3 Days ago</button>
+                    <button class="tablinks active" onclick="openCity(event,'Hourly')">Hourly</button>
+                    <button class="tablinks" onclick="openCity(event,'Next7days')">Next 7 days</button>
+                </div>
+                <div class="detail-location">
+                    <h2 class="location-forecast"></h2>
+                </div>
+
+                <div id="PastForecast" class="tabcontent">
+                    <!-- DAY 1 -->
+                    <div class="weather-content">
+                        <div class="weather-header">
+                            <div class="short-forecast">
+                                <img src="http://openweathermap.org/img/wn/10d@2x.png" width="85">
+                                <div class="weather-information">
+                                    <p class="time">12:00 </p>
+                                    <p class="detail description">Thunderstorm with heavy rain</p>
+                                </div>
+                            </div>
+
+                            <div class="detail temp">
+                                <i class="wi wi-thermometer header-icon"></i>
+                                <div class="detail make-grid">
+                                    <h6>Temperature</h6>
+                                    <span>25<sup>o</sup>C</span>
+                                </div>
+                            </div>
+                            <div class="detail real-feel">
+                                <i class="wi wi-thermometer-internal header-icon"></i>
+                                <div class="detail make-grid">
+                                    <h6>Real feel</h6>
+                                    <span>25<sup>o</sup>C</span></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="fully-information">
+                            <div class="weather-container">
+                                <div class="weather humidity detail-item">
+                                    <i class="wi wi-humidity detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Humidity</span>
+                                        <span class="weather-index">80%</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather pressure detail-item">
+                                    <i class="wi wi-barometer detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Chance of rain</span>
+                                        <span class="kindof-index">Pressure</span>
+                                        <span class="weather-index">80%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="weather visibility detail-item">
+                                    <i class="ti-eye detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Visibility</span>
+                                        <span class="weather-index">10km</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather sun-rise detail-item">
+                                    <i class="wi wi-sunrise detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Sun rise</span>
+                                        <span class="weather-index">23:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather sun-set detail-item">
+                                    <i class="wi wi-sunset detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Sun set</span>
+                                        <span class="weather-index">23:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather UVindex detail-item">
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="detail-img">                                 
+                                    <div class="weather make-grid"> 
+                                        <span class="kindof-index">UV index</span>
+                                        <span class="weather-index">0.8 (Very height)</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="weather wind_deg detail-item">
+                                    <i class="wi wi-wind-direction detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Wind direction</span>
+                                        <span class="weather-index">North East</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_gust detail-item">
+                                    <i class="fas fa-wind detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Wind gust</span>
+                                        <span class="weather-index">99m/s</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_speed detail-item">
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="detail-img">
+                                    <div class="weather make-grid">              
+                                        <span class="kindof-index">Wind speed</span>
+                                        <span class="weather-index">99m/s</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="Hourly" class="tabcontent">
+                    <div class="weather-content">
+                        <div class="weather-header">
+                            <div class="short-forecast">
+                                <img src="http://openweathermap.org/img/wn/04d@2x.png" width="85">
+                                <div class="weather-information">
+                                    <p class="time">12:00</p>
+                                    <p class="detail description">Thunderstorm with heavy rain</p>
+                                </div>
+                            </div>
+
+                            <div class="detail rain-volumn">
+                                <i class="wi wi-raindrops header-icon"></i>
+                                <div class="detail make-grid">
+                                    <h3>Chance of rain</h3>
+                                    <span>----------</span>
+                                </div>
+                            </div>
+
+                            <div class="detail temp">
+                                <i class="wi wi-thermometer header-icon"></i>
+                                <div class="detail make-grid">
+                                    <h3>Temperature</h3>
+                                    <span>25<sup>o</sup>C</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fully-information">
+                            <div class="weather-container">
+                                <div class="weather humidity detail-item">
+                                    <i class="wi wi-humidity detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Humidity</span>
+                                        <span class="weather-index">80%</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather pressure detail-item">
+                                    <i class="wi wi-barometer detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Pressure</span>
+                                        <span class="weather-index">80%</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- <div class="weather max-temp detail-item">
+                                    <i class="wi wi-thermometer detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Max temperature</span>
+                                        <span class="weather-index">99<sup>o</sup>C</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather min-temp detail-item">
+                                    <i class="wi wi-thermometer-exterior detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Min temperature</span>
+                                        <span class="weather-index">99<sup>o</sup>C</span>
+                                    </div>
+                                </div> -->
+
+                                <div class="weather feel-like detail-item">
+                                    <i class="wi wi-thermometer-internal detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Real feel</span>
+                                        <span class="weather-index">99<sup>o</sup>C</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_deg detail-item">
+                                    <i class="wi wi-wind-direction detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Wind direction</span>
+                                        <span class="weather-index">North East</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_gust detail-item">
+                                    <i class="fas fa-wind detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Wind gust</span>
+                                        <span class="weather-index">99m/s</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_speed detail-item">
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="detail-img">
+                                    <div class="weather make-grid">              
+                                        <span class="kindof-index">Wind speed</span>
+                                        <span class="weather-index">99m/s</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather UVindex detail-item">
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="detail-img">                                 
+                                    <div class="weather make-grid"> 
+                                        <span class="kindof-index">UV index</span>
+                                        <span class="weather-index">8</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather clouds detail-item">
+                                    <i class="wi wi-cloudy detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Clouds cover</span>
+                                        <span class="weather-index">100%</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather visibility detail-item">
+                                    <i class="ti-eye detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Visibility</span>
+                                        <span class="weather-index">10km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="Next7days" class="tabcontent">
+                    <div class="weather-content">
+                        <div class="weather-header">
+                            <div class="short-forecast">
+                                <img src="http://openweathermap.org/img/wn/10d@2x.png" width="85">
+                                <div class="weather-information">
+                                    <p class="time">12:00 AM</p>
+                                    <p class="detail description">Thunderstorm with heavy rain</p>
+                                </div>
+                            </div>
+
+                            <div class="detail rain-volumn">
+                                <i class="wi wi-thermometer header-icon"></i>
+                                <div class="detail make-grid">
+                                    <h3>Max temperature</h3>
+                                    <span>25<sup>o</sup>C</span>
+                                </div>
+                            </div>
+
+                            <div class="detail temp">
+                                <i class="wi wi-thermometer-exterior header-icon"></i>
+                                <div class="detail make-grid">
+                                    <h3>Min temperature</h3>
+                                    <span>25<sup>o</sup>C</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail session-content">
+                            <div class="detail inday-forecast">
+                                <h4 class="detail session-header">Morning</h4>
+                                <div class="detail session-weather">
+                                    <div class="flex-item">
+                                        <p class="max-temp">Temperature</p>
+                                        <span class="detail session-temp">99<sup>o</sup>C</span>
+                                    </div>
+                                    <div class="flex-item">
+                                        <p class="feel-like">Feel like</i></p>
+                                        <p class="detail session-rain-ratio">99<sup>o</sup>C</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail inday-forecast">
+                                <h4 class="detail session-header">Day</h4>
+                                <div class="detail session-weather">
+                                    <div class="flex-item">
+                                        <p class="max-temp">Temperature</p>
+                                        <span class="detail session-temp">99<sup>o</sup>C</span>
+                                    </div>
+                                    <div class="flex-item">
+                                        <p class="feel-like">Feel like</i></p>
+                                        <p class="detail session-rain-ratio">99<sup>o</sup>C</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail inday-forecast">
+                                <h4 class="detail session-header">Evening</h4>
+                                <div class="detail session-weather">
+                                    <div class="flex-item">
+                                        <p class="max-temp">Temperature</p>
+                                        <span class="detail session-temp">99<sup>o</sup>C</span>
+                                    </div>
+                                    <div class="flex-item">
+                                        <p class="feel-like">Feel like</i></p>
+                                        <p class="detail session-rain-ratio">99<sup>o</sup>C</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail inday-forecast">
+                                <h4 class="detail session-header">Night</h4>
+                                <div class="detail session-weather">
+                                    <div class="flex-item">
+                                        <p class="max-temp">Temperature</p>
+                                        <span class="detail session-temp">99<sup>o</sup>C</span>
+                                    </div>
+                                    <div class="flex-item">
+                                        <p class="feel-like">Feel like</i></p>
+                                        <p class="detail session-rain-ratio">99<sup>o</sup>C</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fully-information">
+                            <div class="weather-container">
+                                <div class="weather humidity detail-item">
+                                    <i class="wi wi-humidity detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Humidity</span>
+                                        <span class="weather-index">80%</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather pressure detail-item">
+                                    <i class="wi wi-barometer detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Pressure</span>
+                                        <span class="weather-index">80%</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- <div class="weather max-temp detail-item">
+                                    <i class="wi wi-thermometer detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Max temperature</span>
+                                        <span class="weather-index">99<sup>o</sup>C</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather min-temp detail-item">
+                                    <i class="wi wi-thermometer-exterior detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Min temperature</span>
+                                        <span class="weather-index">99<sup>o</sup>C</span>
+                                    </div>
+                                </div> -->
+
+                                <div class="weather feel-like detail-item">
+                                    <i class="wi wi-thermometer-internal detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Chance of rain</span>
+                                        <span class="weather-index">99%</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_deg detail-item">
+                                    <i class="wi wi-wind-direction detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Wind direction</span>
+                                        <span class="weather-index">North East</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_gust detail-item">
+                                    <i class="fas fa-wind detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Wind gust</span>
+                                        <span class="weather-index">99m/s</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather wind_speed detail-item">
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_windspeed@2x.png" alt="" class="detail-img">
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Wind speed</span>
+                                        <span class="weather-index">99m/s</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather UVindex detail-item">
+                                    <img src="https://admin.goweatherforecast.com/images/ic_detail_pressure@2x.png" alt="" class="detail-img">                                 
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">UV index</span>
+                                        <span class="weather-index">8</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather clouds detail-item">
+                                    <i class="wi wi-cloudy detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Clouds cover</span>
+                                        <span class="weather-index">100%</span>
+                                    </div>
+                                </div>
+
+                                <div class="weather visibility detail-item">
+                                    <i class="ti-eye detail-icon"></i>
+                                    <div class="weather make-grid">
+                                        <span class="kindof-index">Visibility</span>
+                                        <span class="weather-index">10km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'detail.js' %}"></script>
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+    
+</body>
+</html>
